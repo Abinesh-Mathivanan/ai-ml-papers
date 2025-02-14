@@ -1,0 +1,19 @@
+Think of dropout like randomly turning off parts of your brain while studying. The working is like,
+
+1. The Basic Idea
+    - During training, randomly "turn off" some neurons (20-50%)
+    - Each training pass uses a different random set of neurons
+    - During testing, use all neurons but scale their outputs
+
+2. The Math Behind It
+    - Let's say probability of keeping a neuron is p (like p = 0.5)
+    - During training:
+      * Each neuron's output is either kept (with probability p)
+      * Or set to zero (with probability 1-p)
+    - During testing:
+      * All neurons are active
+      * Multiply outputs by p to maintain same expected value
+
+
+Simply, Dropout is basically just randomly ignoring some neurons during training, 
+which helps the network generalize better.
