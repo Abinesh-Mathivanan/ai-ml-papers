@@ -17,6 +17,9 @@ def train():
 
     text_data = load_text_data("data")
     scaler = RobustScaler()
+
+    # I'll update the model with real data soon. Have to work on some pre-processing
+    # until then, we could fit the scaler using dummy data, unexpectedly, it still works better. 
     dummy_sonar_data = torch.randn(10000, input_dim)
     scaler.fit(dummy_sonar_data)
 
