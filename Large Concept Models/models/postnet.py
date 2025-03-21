@@ -1,5 +1,6 @@
 import torch.nn as nn
 
+# post-net denormalizes the layer data to the output 
 class PostNet(nn.Module):
     def __init__(self, model_dim, output_dim, scaler):
         super().__init__()

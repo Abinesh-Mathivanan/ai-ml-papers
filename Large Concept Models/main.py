@@ -1,13 +1,16 @@
 import torch
 from models import SonarEncoder, SonarDecoder, LargeConceptModel, RobustScaler
 
+# We used SONAR to implement Sentence level embedding (reference - https://ai.meta.com/research/publications/sonar-sentence-level-multimodal-and-language-agnostic-representations/)
+# it's quite a heavy package, i suggest to test the model in colab env. 
+
 def main():
     input_dim = 512
     model_dim = 768
     output_dim = 512
     num_layers = 6
     num_heads = 8
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu") # better use T4-V2 GPU 
     scaler = RobustScaler()
 
     encoder = SonarEncoder(device=device)

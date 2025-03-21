@@ -40,6 +40,9 @@ def train():
     criterion = nn.MSELoss()
     optimizer = Adam(model.parameters(), lr=0.001)
 
+    # in training, clean the cache for each epoch
+    # during sonar-encoding, model converges much faster and exhausts the total GPU available 
+    
     epochs = 2
     for epoch in range(epochs):
         optimizer.zero_grad()

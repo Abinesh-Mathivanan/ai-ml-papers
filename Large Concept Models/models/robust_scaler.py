@@ -1,5 +1,6 @@
 import torch
 
+# scaler mechanism keeps the normalized and de-normalized values over the model layers within the IQR.
 class RobustScaler:
     def __init__(self):
         self.median = None
